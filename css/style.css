@@ -1,0 +1,159 @@
+body{
+  padding:0;
+  margin:0;
+  background-color:#e5e5e5;
+  font-family:"Myriad Pro Light", "Myriad Pro", sans-serif;
+  color:#4d4d4d;
+  font-size:1.25em;
+  letter-spacing:0.025em;
+}
+
+.width-100{
+  margin:0;
+  width:100%;
+}
+
+.vertical{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.horizontal{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+}
+
+.centered{
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+}
+
+.bar{
+  height:6vh;
+  position:fixed;
+}
+
+.content{
+  margin:5em;
+  padding-top:5vh;
+}
+
+.menu{
+  right:3vh;
+  height:2.75vh;
+}
+
+#header{
+  text-align:center;
+  background-color:#237d94;
+  color:#fff;
+  top:0;
+}
+
+#options{
+  color:#237d94;
+  background-color:#fff;
+  position:absolute;
+  top:6vh;
+  box-shadow:0px 1px 20px rgba(77,77,77,0.25);
+}
+
+.play-audio{
+  width:25vw;
+  min-width:15em;
+  float:left;
+  text-align:left;
+  text-transform:uppercase;
+  margin-left:1em;
+}
+
+.audio-msg{
+  left:2.5em;
+}
+
+.play-button{
+  font-size:1.25em;
+  color:#fff;
+  background-color:#237d94;
+  text-align:center;
+  width:1.5em;
+  height:1.5em;
+  border-radius:50%;
+  float:left;
+}
+
+#footer{
+  bottom:0;
+  color:#4d4d4d;
+  background-color:#fff;
+  box-shadow:0px -1px 30px rgba(77,77,77,0.25);
+}
+
+#footer .vertical{
+  right:2vw;
+}
+
+#footer-msg{
+  /*display:none;*/
+}
+
+.button{
+  height:4vh;
+  width:25vw;
+  border-radius:0.25em;
+  background-color:#237d94;
+  color:#fff;
+  text-align:center;
+}
+
+.button:hover{
+  cursor:pointer;
+}
+
+#footer-contents .button{
+  display:none;
+  position:relative;
+  
+}
+
+.progress-bar{
+  z-index:2;
+  position:relative;
+  height:0.5vh;
+  background-color:#bdbdbd;
+  bottom:0.5vh;
+}
+
+#progress{
+  width:0vw;
+  z-index:3;
+  position:relative;
+  bottom:1vh;
+  background-color:#237d94;
+}
+
+.circle-progress-bar{
+  z-index:2;
+  position:relative;
+  height:2.5vh;
+  bottom:4vh;
+}
+
+.circle{
+  display:inline-block;
+  border-radius:50%;
+  height:0.4em;
+  width:0.4em;
+  border:1px solid #424242;
+  margin:0.25em;
+  margin-top:0.5em;
+}
+
+.circle-filled{
+  border:1px solid #237d94;
+  background-color:#237d94;
+}
