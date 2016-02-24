@@ -15,7 +15,7 @@ var drawCircles = function(){
     circleNum++;
   }
   
-  console.log(circleNum);
+  //console.log(circleNum);
   
   //console.log( pageWidth );
   
@@ -24,7 +24,7 @@ var drawCircles = function(){
 
 
 $( document ).ready( function() {
-  drawCircles();
+  //drawCircles();
 
   var curScrollPos = 0;
 
@@ -38,7 +38,7 @@ $( document ).ready( function() {
       if( $( window ).scrollTop() == pageBottom ){
         $( "#footer-msg" ).hide();
         $( "#footer-contents .button" ).show();
-        
+
         console.log( "FINISHED" );
       }
     }
