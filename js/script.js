@@ -33,7 +33,8 @@ $( document ).ready( function() {
       curScrollPos = $( window ).scrollTop();
       var pageBottom = $( document ).height() - $( window ).height();
       
-      $( "#progress" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
+      //$( "#progress" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
+      $( "#progress-top" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
       
       if( $( window ).scrollTop() == pageBottom ){
         $( "#footer-msg" ).hide();

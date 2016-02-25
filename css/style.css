@@ -8,6 +8,11 @@ body{
   letter-spacing:0.025em;
 }
 
+h2,h3,h4,h5{
+  font-family:"Myriad Pro", sans-serif;
+  font-weight:normal;
+}
+
 .width-100{
   margin:0;
   width:100%;
@@ -133,6 +138,23 @@ body{
   z-index:3;
   position:relative;
   bottom:1vh;
+  background-color:#237d94;
+}
+
+/* TOP PROGRESS BAR */
+.progress-bar-top{
+  z-index:2;
+  position:relative;
+  height:0.5vh;
+  background-color:#bdbdbd;
+  top:12vh;
+}
+
+#progress-top{
+  width:0vw;
+  z-index:3;
+  position:relative;
+  top:11.5vh;
   background-color:#237d94;
 }
 
