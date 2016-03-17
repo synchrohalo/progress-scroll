@@ -1,19 +1,25 @@
 var drawCircles = function(){
+  var circleNum = 0;
   var pageWidth = $( ".circle-progress-bar" ).outerWidth(true);
-  var circleDiv = "<div class='circle'></div>";
+  var circleDiv = "<div class='circle' id='circle-" + circleNum + "'></div>";
   
   $( ".circle-progress-bar" ).prepend( circleDiv );
   
   var circleWidth = $( ".circle" ).outerWidth(true);
-  var circleNum = 0;
+
+  circleNum = 1;
   
   //console.log( circleWidth );
   
   for( var i = 0; i < ( pageWidth / circleWidth ) - 2; i++ ){
+    circleDiv = "<div class='circle' id='circle-" + circleNum + "'></div>";
+
     $( ".circle-progress-bar" ).prepend( circleDiv );
     
     circleNum++;
   }
+
+  return circleNum;
   
   //console.log(circleNum);
   
@@ -24,8 +30,10 @@ var drawCircles = function(){
 
 
 $( document ).ready( function() {
-  //drawCircles();
+  var circleNum = drawCircles();
+  //console.log(circleNum);
 
+  var prevScrollPos = 0;
   var curScrollPos = 0;
   var overviewPos = $( "a[href='#overview'" ).offset().top;
   var purposePos = $( "a[href='#purpose'" ).offset().top;
@@ -43,17 +51,35 @@ $( document ).ready( function() {
 
   $( window ).scroll(
     function(){
-      curScrollPos = $( window ).scrollTop();
+      curScrollPos = $( this ).scrollTop();
       var pageBottom = $( document ).height() - $( window ).height();
-      
-      //$( "#progress" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
-      $( "#progress-top" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
+
+      // scroll down
+      if( curScrollPos > prevScrollPos ){
+        for(var i = 0; i <= ( circleNum * curScrollPos / pageBottom ); i++ ){
+          $( "#circle-" + (circleNum - i).toString() ).addClass( "circle-filled" );
+        }
+      }
+      // scroll up
+      else{
+        for(var i = circleNum; i >= ( circleNum * curScrollPos / pageBottom ); i-- ){
+          $( "#circle-" + (circleNum - i).toString() ).removeClass( "circle-filled" );
+        }
+      }
+
+      prevScrollPos = curScrollPos;
+
+      //$( "#progress-top" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
       
       /***** CHANGE HEADER TITLE *****/
-      if( $( window ).scrollTop() >= overviewPos ){
+      if( $( window ).scrollTop() > ( overviewPos - 1) ){
+          $( "#section" ).show(); // y this no work
           $( "#doc-header" ).show(); // y this no work
           //$( "#doc-header" ).replaceWith( "<h2 id='#doc-header'>Overview</h2>" );
           $( "#doc-header" ).html( "Overview" );
+      }
+      else{
+        $( "#doc-header" ).hide();
       }
       /*if( $( window ).scrollTop() >= purposePos ){
           $( "#doc-header" ).html( "Purpose" );
@@ -64,19 +90,19 @@ $( document ).ready( function() {
       if( $( window ).scrollTop() >= discontPos ){
           $( "#doc-header" ).html( "Discontinue" );
       }*/
-      if( $( window ).scrollTop() >= informedPos ){
+      if( $( window ).scrollTop() > ( informedPos - 1 ) ){
           $( "#doc-header" ).html( "Informed Consent" );
       }
-      if( $( window ).scrollTop() >= procedurePos ){
+      if( $( window ).scrollTop() > ( procedurePos - 1 ) ){
           $( "#doc-header" ).html( "Procedure" );
       }
-      if( $( window ).scrollTop() >= risksPos ){
+      if( $( window ).scrollTop() > ( risksPos - 1 ) ){
           $( "#doc-header" ).html( "Risks & Benefits" );
       }
       /*if( $( window ).scrollTop() >= benefitsPos ){
           $( "#doc-header" ).html( "Benefits" );
       }*/
-      if( $( window ).scrollTop() >= disclosurePos ){
+      if( $( window ).scrollTop() > ( disclosurePos  - 1 ) ){
           $( "#doc-header" ).html( "Disclosure, Costs, & Participation" );
       }
       /*if( $( window ).scrollTop() >= costsPos ){
