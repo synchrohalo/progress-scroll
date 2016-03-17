@@ -49,6 +49,59 @@ $( document ).ready( function() {
 
   //console.log( anchorPos )
 
+  var modalOn = false;
+  var qMarked = false;
+
+  // question modal
+  if( !modalOn ){ 
+    $( "#overview-q" ).click( function() {
+      $( "#no-content" ).fadeIn( "fast", function(){
+        $( "#question-panel" ).slideToggle( "fast", function() {
+        });
+      });
+    });
+
+    modalOn = true;
+  }
+
+  if( modalOn ){
+    $( "#q-modal" ).click( function() {
+      if( !qMarked ) $( "#question-panel" ).slideToggle( "fast" ); 
+      $( "#q-modal" ).fadeOut( "fast" );
+    });
+
+    $( ".close" ).click( function() {
+      $( "#question-panel" ).slideToggle( "fast", function() {
+        $( ".modal" ).fadeOut( "fast" )
+      });
+    });
+
+    $( ".confusing" ).click( function() {
+      qMarked = true;
+      $( ".modal" ).fadeOut( "fast" );
+      $( "#overview-q" ).addClass( "question-marked" );
+      $( "#question-panel" ).slideToggle( "fast", function() {
+        $( "#q-modal" ).fadeIn( "fast", function() {
+          //$( "#question-modal" ).fadeOut( "fast" );
+        });
+      });
+    });
+
+    modalOn = false;
+  }
+
+  // question direct manipulation
+  /*$( "#purpose-q" ).click( function() {
+      $( "#question-modal" ).fadeIn( "fast", function(){
+        $( "#question-panel" ).slideToggle( "fast", function() {
+          //modalOn = true;
+
+          //console.log(modalOn);
+        });
+      });
+    });*/
+
+
   $( window ).scroll(
     function(){
       curScrollPos = $( this ).scrollTop();
@@ -72,15 +125,16 @@ $( document ).ready( function() {
       //$( "#progress-top" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
       
       /***** CHANGE HEADER TITLE *****/
-      if( $( window ).scrollTop() > ( overviewPos - 1) ){
+      /*if( $( window ).scrollTop() > ( overviewPos - 1) ){
           $( "#section" ).show(); // y this no work
           $( "#doc-header" ).show(); // y this no work
+          //$( "#section .question" ).show(); // y this no work
           //$( "#doc-header" ).replaceWith( "<h2 id='#doc-header'>Overview</h2>" );
           $( "#doc-header" ).html( "Overview" );
       }
       else{
-        $( "#doc-header" ).hide();
-      }
+        $( "#section" ).hide();
+      }*/
       /*if( $( window ).scrollTop() >= purposePos ){
           $( "#doc-header" ).html( "Purpose" );
       }

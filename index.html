@@ -13,6 +13,25 @@
 </head>
 <body>
 
+  <div class="modal" id="no-content"></div>
+
+  <div class="modal" id="q-modal">
+    <h2>Your question has been noted.</h2>
+  </div>
+  <div id="question-panel">
+    <ul class="options">
+      <li class="confusing"><p>I have a question about this section</p></li>
+      <li class="close"><p>Close</p></li>
+    </ul>
+  </div>
+
+  <!--<div class="question-popup">
+    <ul class="options-popup">
+      <li class="confusing"><p>I have a question about this section</p></li>
+      <li class="close"><p>Close</p></li>
+    </ul>
+  </div>-->
+
   <!--<div class="progress-bar-v"></div>
   <div class="progress-bar-v" id="progress-v"></div>-->
 
@@ -37,38 +56,39 @@
     <div class="circle-progress-bar"></div>
 
     <div class="width-100 bar" id="section">
-      <h2 id="doc-header">Header</h2>
+      <h2 id="doc-header">Header</h2><div class="question">?</div>
     </div>
   </div>
   
   <div class="content">
     <h1>Study Name</h1>
 
-    <a href="#overview"><h2>Overview</h2></a>
+    <a href="#overview"><h2>Overview</h2><div id="overview-q" class="question">?</div></a>
+
     <p>Hi. This iPad is a learning device for patients like you who may be interested in participating in clinical research studies. Over the next several minutes, we’re going to explain the details of the study to you, to help you make a decision about whether you’d like to participate in this important research study. You’ll learn more about things like your rights and responsibilities, the required procedures, and the possible benefits and risks of your participation.</p> 
 
     <p>You’re being invited to take part in this study because you have been diagnosed with early stage prostate cancer and are undergoing active surveillance and being observed over time to see if and when your prostate cancer progresses.  Your participation in this study is entirely voluntary.</p> 
  
     <p>This research study is sponsored by Astellas Pharma Global Development, Medical Affairs, Americas.</p> 
 
-    <a href="#purpose"><h2>Purpose</h2></a>
+    <a href="#purpose"><h2>Purpose</h2><div id="purpose-q" class="question">?</div></a>
     <p>The main purpose of this study is to learn how well a study drug called enzalutamide can delay the progression of early stage prostate cancer.  Enzalutamide is approved by the FDA for treating late stage prostate cancer.</p>
 
-    <a href="#randomization"><h2>Randomization</h2></a>
+    <a href="#randomization"><h2>Randomization</h2><div class="question">?</div></a>
     <p>Approximately 222 participants in the United States and Canada will take part in this study.  The study is a randomized trial, which means you will be assigned by chance, like flipping a coin, to one of two study groups. A computer will randomly assign you to one of the study groups in the trial. You will have an equal chance of being assigned to either group. One group will take four enzalutamide capsules daily and the other group will continue with active surveillance.</p>
 
-    <a href="#discontinue"><h2>Discontinuing the study</h2></a>
+    <a href="#discontinue"><h2>Discontinuing the study</h2><div class="question">?</div></a>
     <p>You can decide to stop your participation at any time. Your decision to stop participation will not affect your regular care or your relationship with your doctor.</p>
 
-    <a href="#informed"><h2>Informed Consent</h2></a>
+    <a href="#informed"><h2>Informed Consent</h2><div class="question">?</div></a>
     <p>In order to enter the study, you have to sign a document called the “informed consent form”. This says you understand the risks and benefits of the study and you’d like to volunteer to take part in this study. This iPad will allow you to read the entire informed consent document and to sign it. By signing this document, you’ll be volunteering to take part in this study. A copy of the informed consent form, with your signature and the signature of the study doctor or staff member, will be given to you at the end of the process. As you go through the process, please ask the study doctor or one of the study staff any questions you may have.</p> 
 
-    <a href="#procedure"><h2>Procedure</h2></a>
+    <a href="#procedure"><h2>Procedure</h2><div class="question">?</div></a>
     <p>Your participation in this study will last at least two years and up to three years depending on when you join the study.  During the first two years, you will go to the study clinic every three months.  After two years, you will return to the study clinic every six months until the last patient has completed two years of study participation.</p>
 
     <p>At every visit, study staff will ask about your condition, complaints and current medications.  Blood and urine samples will be taken, and a physical exam and digital rectal exam will be performed.   Periodically, you will also complete surveys about your quality of life and how you are feeling.  During your first visit and after one and two years, there will be an additional blood draw and a prostate biopsy will be collected.</p>
 
-   <a href="#risks"><h2>Risks</h2></a>
+   <a href="#risks"><h2>Risks</h2><div class="question">?</div></a>
     <p>Before taking any medication, including over the counter drugs and herbal medications or supplements, you must discuss taking these medications with your study doctor. Some medications may interact with the study drug.  Your study doctor will tell you what medications you may take while you are participating in this study.</p>
 
     <p>While taking part in this study, you may experience side effects. The most common side effects of enzalutamide are: tiredness, back pain, decreased appetite, constipation, diarrhea, hot flushes, respiratory infections, water retention, difficulty breathing, bone or joint pain, weight loss, headaches, high blood pressure, and dizziness.</p>
@@ -77,18 +97,18 @@
 
     <p>You must not get a woman pregnant during the study by using a form of birth control approved by your study doctor.  If you father a child while taking part in this study, you must inform your doctor immediately.</p>
 
-    <a href="#benefits"><h2>Benefit statement</h2></a>
+    <a href="#benefits"><h2>Benefit statement</h2><div class="question">?</div></a>
     <p>If you decide to take part in this study, your signs and symptoms may or may not improve.</p>
 
     <p>Your participation may provide important information to help other people with cancer in the future.</p>
 
-    <a href="#disclosure"><h2>Disclosure</h2></a>
+    <a href="#disclosure"><h2>Disclosure</h2><div class="question">?</div></a>
     <p>The information collected about you during this study may be given to professionals who are conducting this study for the purpose of developing medical treatments for individuals, like yourself, and for general health research. This includes members of the study sponsor, study research staff, companies working for the study sponsor and regulatory authorities. Your identity and medical information will be kept confidential.</p>
 
-    <a href="#costs"><h2>Costs</h2></a>
+    <a href="#costs"><h2>Costs</h2><div class="question">?</div></a>
     <p>You will not be charged for enzalutamide or any of the tests and procedures performed solely for research purposes.</p>
 
-    <a href="#participation"><h2>Participation is a choice</h2></a>
+    <a href="#participation"><h2>Participation is a choice</h2><div class="question">?</div></a>
     <p>Remember, taking part in this study is your choice. If you decide to participate, you may leave the study at any time.</p>
  
     <p>If you stop the study early, you need to stop using the study drug and tell your study doctor immediately. You’ll be asked to complete a final visit to the doctor’s office for tests to ensure your safety.</p>
