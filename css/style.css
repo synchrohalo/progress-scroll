@@ -8,9 +8,17 @@ body{
   letter-spacing:0.025em;
 }
 
+h1{
+  font-size:1.75em;
+}
+
 h1,h2,h3,h4,h5{
   font-family:"Myriad Pro", sans-serif;
   font-weight:normal;
+}
+
+h2{
+  font-size:1.25em;
 }
 
 .width-100{
@@ -82,7 +90,37 @@ h1,h2,h3,h4,h5{
   background-color:#fff;
   position:absolute;
   top:6vh;
-  box-shadow:0px 1px 20px rgba(77,77,77,0.25);
+  box-shadow:0px 1px 20px rgba(77,77,77,0.5);
+}
+
+#header-labels{
+  position:fixed;
+  /*left:-12vh;*/
+  top:15vh;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+#header-labels li{
+  position:relative;
+  height:2.1em;
+  width:25vw;
+  color:#4d4d4d;
+  text-transform:uppercase;
+  background-color:rgba(256, 256, 256, 0.75);
+  /*background-color:rgba(35, 125, 148, 0.75);*/
+  text-align:center;
+  margin-bottom:0.5em;
+  left:-23vw;
+}
+
+li#label-1{
+  left:0vw;  
+}
+
+#header-labels li p{
+  padding-top:0.6em;
 }
 
 #doc-header{
@@ -215,6 +253,7 @@ h1,h2,h3,h4,h5{
   position:relative;
   height:2.5vh;
   top:12vh;
+  background-color:rgba(0,0,0,0.1);
 }
 
 .circle{
@@ -222,7 +261,9 @@ h1,h2,h3,h4,h5{
   border-radius:50%;
   height:0.25em;
   width:0.25em;
-  border:1px solid #424242;
+  /*border:1px solid #424242;*/
+  border:1px solid rgba(35,125,148,0.0);
+  background-color:rgba(35,125,148,0.2);
   margin:0.25em;
   margin-top:0.5em;
 }

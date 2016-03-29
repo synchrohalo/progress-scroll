@@ -35,7 +35,7 @@ $( document ).ready( function() {
 
   var prevScrollPos = 0;
   var curScrollPos = 0;
-  var overviewPos = $( "a[href='#overview'" ).offset().top;
+  /*var overviewPos = $( "a[href='#overview'" ).offset().top;
   var purposePos = $( "a[href='#purpose'" ).offset().top;
   var randomPos = $( "a[href='#randomization'" ).offset().top;
   var discontPos = $( "a[href='#discontinue'" ).offset().top;
@@ -45,7 +45,7 @@ $( document ).ready( function() {
   var benefitsPos = $( "a[href='#benefits'" ).offset().top;
   var disclosurePos = $( "a[href='#disclosure'" ).offset().top;
   var costsPos = $( "a[href='#costs'" ).offset().top;
-  var participationPos = $( "a[href='#participation'" ).offset().top;
+  var participationPos = $( "a[href='#participation'" ).offset().top;*/
 
   //console.log( anchorPos )
 
@@ -101,6 +101,8 @@ $( document ).ready( function() {
       });
     });*/
 
+  var label1Off = false;
+  var label2Off = true;
 
   $( window ).scroll(
     function(){
@@ -135,15 +137,27 @@ $( document ).ready( function() {
       else{
         $( "#section" ).hide();
       }*/
-      /*if( $( window ).scrollTop() >= purposePos ){
-          $( "#doc-header" ).html( "Purpose" );
+
+      /*if( $( window ).scrollTop() > purposePos ){
+          //$( "#doc-header" ).html( "Purpose" );
+          
+          if( label2Off ){
+              $( "#label-2" ).animate({ 
+                left:"+=23vw"
+              }, 500 );
+              $( "#label-1" ).animate({
+                left:"-=23vw"
+              }, 500 );
+
+              label2Off = false;
+          }
       }
-      if( $( window ).scrollTop() >= randomPos ){
+      if( $( window ).scrollTop() > randomPos ){
           $( "#doc-header" ).html( "Randomization" );
       }
-      if( $( window ).scrollTop() >= discontPos ){
+      if( $( window ).scrollTop() > discontPos ){
           $( "#doc-header" ).html( "Discontinue" );
-      }*/
+      }
       if( $( window ).scrollTop() > ( informedPos - 1 ) ){
           $( "#doc-header" ).html( "Informed Consent" );
       }
@@ -153,16 +167,16 @@ $( document ).ready( function() {
       if( $( window ).scrollTop() > ( risksPos - 1 ) ){
           $( "#doc-header" ).html( "Risks & Benefits" );
       }
-      /*if( $( window ).scrollTop() >= benefitsPos ){
+      if( $( window ).scrollTop() > benefitsPos ){
           $( "#doc-header" ).html( "Benefits" );
-      }*/
+      }
       if( $( window ).scrollTop() > ( disclosurePos  - 1 ) ){
           $( "#doc-header" ).html( "Disclosure, Costs, & Participation" );
       }
-      /*if( $( window ).scrollTop() >= costsPos ){
+      if( $( window ).scrollTop() > costsPos ){
           $( "#doc-header" ).html( "Costs" );
       }
-      if( $( window ).scrollTop() >= participationPos ){
+      if( $( window ).scrollTop() > participationPos ){
           $( "#doc-header" ).html( "Participation" );
       }*/
 
