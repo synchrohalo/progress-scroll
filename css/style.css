@@ -1,6 +1,10 @@
-body{
+html,body{
   padding:0;
   margin:0;
+  height:100vh;
+}
+
+body{
   background-color:#f2f5f8;
   font-family:"Myriad Pro Light", "Myriad Pro", sans-serif;
   color:#4d4d4d;
@@ -48,6 +52,10 @@ h2{
 .bar{
   height:6vh;
   position:fixed;
+}
+
+.scroll-lock{
+  overflow:hidden;
 }
 
 .content{
@@ -307,11 +315,12 @@ li#label-1{
 }
 
 .modal{
+  z-index:10; 
   display:none;
   position:fixed;
-  z-index:10;
   height:100vh;
   width:100vw;
+  top:-10%;
   background-color:rgba(35,125,148,0.8);
 }
 

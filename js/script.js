@@ -1,11 +1,11 @@
 var drawCircles = function(){
   var circleNum = 0;
-  var pageWidth = $( ".circle-progress-bar" ).outerWidth(true);
+  var pageWidth = $( ".circle-progress-bar" ).outerWidth( true );
   var circleDiv = "<div class='circle' id='circle-" + circleNum + "'></div>";
   
   $( ".circle-progress-bar" ).prepend( circleDiv );
   
-  var circleWidth = $( ".circle" ).outerWidth(true);
+  var circleWidth = $( ".circle" ).outerWidth( true );
 
   circleNum = 1;
   
@@ -13,7 +13,7 @@ var drawCircles = function(){
   
   for( var i = 0; i < ( pageWidth / circleWidth ) - 2; i++ ){
     circleDiv = "<div class='circle' id='circle-" + circleNum + "'></div>";
-
+ 
     $( ".circle-progress-bar" ).prepend( circleDiv );
     
     circleNum++;
@@ -22,11 +22,10 @@ var drawCircles = function(){
   return circleNum;
   
   //console.log(circleNum);
-  
   //console.log( pageWidth );
-  
   //console.log( $( ".circle" ).width() );
-}
+
+} // draws a number of circles on the progress bar depending on screen width
 
 
 $( document ).ready( function() {
@@ -35,6 +34,7 @@ $( document ).ready( function() {
 
   var prevScrollPos = 0;
   var curScrollPos = 0;
+
   /*var overviewPos = $( "a[href='#overview'" ).offset().top;
   var purposePos = $( "a[href='#purpose'" ).offset().top;
   var randomPos = $( "a[href='#randomization'" ).offset().top;
@@ -59,21 +59,29 @@ $( document ).ready( function() {
         $( "#question-panel" ).slideToggle( "fast", function() {
         });
       });
+
+      
+      $( "body" ).addClass( "scroll-lock" );
     });
 
     modalOn = true;
   }
 
   if( modalOn ){
+    
     $( "#q-modal" ).click( function() {
       if( !qMarked ) $( "#question-panel" ).slideToggle( "fast" ); 
       $( "#q-modal" ).fadeOut( "fast" );
+
+      $( "body" ).removeClass( "scroll-lock" );
     });
 
     $( ".close" ).click( function() {
       $( "#question-panel" ).slideToggle( "fast", function() {
         $( ".modal" ).fadeOut( "fast" )
       });
+
+      $( "body" ).removeClass( "scroll-lock" );
     });
 
     $( ".confusing" ).click( function() {
@@ -85,6 +93,8 @@ $( document ).ready( function() {
           //$( "#question-modal" ).fadeOut( "fast" );
         });
       });
+
+      $( "body" ).removeClass( "scroll-lock" );
     });
 
     modalOn = false;
@@ -109,24 +119,23 @@ $( document ).ready( function() {
       curScrollPos = $( this ).scrollTop();
       var pageBottom = $( document ).height() - $( window ).height();
 
-      // scroll down
       if( curScrollPos > prevScrollPos ){
         for(var i = 0; i <= ( circleNum * curScrollPos / pageBottom ); i++ ){
           $( "#circle-" + (circleNum - i).toString() ).addClass( "circle-filled" );
         }
-      }
-      // scroll up
+      } // if scrolling down, fill in circles i.e. progress
+      
       else{
         for(var i = circleNum; i >= ( circleNum * curScrollPos / pageBottom ); i-- ){
           $( "#circle-" + (circleNum - i).toString() ).removeClass( "circle-filled" );
         }
-      }
+      } // if scrolling up, un-fill circles i.e. backtracking
 
       prevScrollPos = curScrollPos;
 
       //$( "#progress-top" ).css("width", (100 * ( curScrollPos / pageBottom )) + "vw" );
       
-      /***** CHANGE HEADER TITLE *****/
+      // change header title
       /*if( $( window ).scrollTop() > ( overviewPos - 1) ){
           $( "#section" ).show(); // y this no work
           $( "#doc-header" ).show(); // y this no work
@@ -180,13 +189,13 @@ $( document ).ready( function() {
           $( "#doc-header" ).html( "Participation" );
       }*/
 
-      /***** SHOW CONTINUE BUTTON *****/
+      // show Continue button
       if( $( window ).scrollTop() == pageBottom ){
         $( "#footer-msg" ).hide();
         $( "#footer-contents .button" ).show();
 
         console.log( "FINISHED" );
-      }
+      } // if scrolled to bottom of page, let Continue button appear
     }
   );
 
