@@ -61,7 +61,6 @@ $( document ).ready( function() {
         $( "#question-panel" ).slideToggle( "fast", function() {
         });
       });
-
       
       $( "body" ).addClass( "scroll-lock" );
     });
@@ -96,7 +95,7 @@ $( document ).ready( function() {
         });
       });
 
-      $( "body" ).removeClass( "scroll-lock" );
+      $( "body" ).addClass( "scroll-lock" );
     });
 
     modalOn = false;
