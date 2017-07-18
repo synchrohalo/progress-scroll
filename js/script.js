@@ -35,6 +35,8 @@ $( document ).ready( function() {
   var prevScrollPos = 0;
   var curScrollPos = 0;
 
+  $(window).resize(function(){location.reload();});
+
   /*var overviewPos = $( "a[href='#overview'" ).offset().top;
   var purposePos = $( "a[href='#purpose'" ).offset().top;
   var randomPos = $( "a[href='#randomization'" ).offset().top;
